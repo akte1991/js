@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world!</title>
+    <style>
+        section {
+            font-size: 4vw;
+            font-family: cursive;
+        }
+        
+        p {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2 id="first-exercise">Little steps</h2>
+
+        <p>Intro to variables, functions, loops, switches (see code)</p>
+        <script>
+            var a = 4;
+            var b = 10;
+            var equals = a + b;
+
+            document.write("Hello world!!!!!!!!! <br>");
+            document.getElementById("first-exercise").innerHTML = "I changed that one!";
+
+            document.write(a, " + ", b, " = ", equals, "<br>")
+        </script>
+        <p>Some functions</p>
+        <script>
+            if (a > b) {
+                document.write("a is bigger than b");
+            } else {
+                document.write("b is bigger than a <br>");
+            }
+
+            switch (a) {
+            case 4:
+                document.write("four! <br>");
+                break;
+            case 8:
+                document.write("eight!");
+                break;
+            default:
+                document.write(" nothing here");
+            }
+        </script>
+
+        <p>Some loops</p>
+        <script>
+            for (i = 1; i < 11; i++) {
+                document.write(i + ", ");
+            }
+            document.write('<br/>');
+
+
+            while (a < 11) {
+                document.write(a + ", ");
+                a++;
+            }
+
+            document.write('<br/>');
+
+            for (i = 1; i < 11; i++) {
+                for (j = 1; j < i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+
+            
+        </script>
+    </section>
+</body>
+
+</html>

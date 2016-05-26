@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TIMER</title>
+</head>
+
+<body>
+    <h1 id="stoper">Stoper</h1>
+
+    <script>
+        function stoper(minutes, seconds, secondHundredth) {
+            var Sixty = 60;
+            var Hundred = 100;
+            var tempValue;
+
+            this.secondHundredth = secondHundredth % Hundred;
+
+            tempValue = seconds + Math.floor(secondHundredth / Hundred);
+
+            this.seconds = tempValue % Sixty;
+
+            this.minutes = minutes + Math.floor(tempValue / Sixty);
+
+            this.addMinute = function () {
+                ++this.minutes;
+            }
+
+            this.addSecond = function () {
+                ++this.seconds;
+                if (this.seconds == Sixty) {
+                    this.addMinute();
+                    this.seconds = 0;
+                }
+            }
+            this.addSecondHundredth = function () {
+                ++this.secondHundredth;
+                if (this.secondHundredth == Hundred) {
+                    this.addSecond();
+                    this.secondHundredth = 0;
+                }
+            }
+        }
+
+       function displayTime(timer)
+        {
+            timer.addSecondHundredth();
+            
+            var time = displayValue(timer.minutes) + ":" + displayValue(timer.seconds) + ":" + timer.secondHundredth;
+            document.getElementById("stoper").innerHTML = time;
+        }
+        function displayValue(value)
+        {
+            if (value < 10)
+                {
+                    value = "0" + value;
+                }
+            return value;
+        }
+        var czasomierz = new stoper(1, 57, 0);
+        setInterval(function() {displayTime(czasomierz)}, 10);
+              
+    </script>
+
+</body>
+
+</html>

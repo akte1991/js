@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        html {
+            font-family: cursive;
+            font-size: 5vw;
+        }
+    </style>
+</head>
+
+
+<body>
+    <script>
+        document.write("<br>", "hi", "<br>", "my name is", "<br>");
+        //power function
+        var number = 2;
+        document.write(number, " to the power of 5 = ", power(number, 5), "<br>");
+        number = 8;
+        document.write(number, " to the power of 2 = ", power(number), "<br>");
+
+        function power(number, power = 2) {
+            var result = 1;
+            for (var index = 0; index < power; ++index) {
+                result *= number;
+            }
+            return result;
+        }
+       
+    </script>
+
+</body>
+
+</html>
